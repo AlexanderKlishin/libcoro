@@ -77,9 +77,9 @@
 #  include <unistd.h>
 # endif
 
-static coro_func coro_init_func;
-static void *coro_init_arg;
-static coro_context *new_coro, *create_coro;
+static __thread coro_func coro_init_func;
+static __thread void *coro_init_arg;
+static __thread coro_context *new_coro, *create_coro;
 
 static void
 coro_init (void)
